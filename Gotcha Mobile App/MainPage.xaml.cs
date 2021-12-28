@@ -14,5 +14,15 @@ namespace Gotcha_Mobile_App
         {
             InitializeComponent();
         }
+
+        private async void Create_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CreatePage());
+        }
+
+        private async void Join_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new JoinPage());
+        }
     }
 }
