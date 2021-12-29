@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gotcha_Mobile_App.CreatePage"
+             Title="Create Game">
+        <Grid>
+            <StackLayout>
+                <Label Text="Your Name" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                <Entry x:Name="nameOfUser" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="20"/>
+                <Label Text="Name of Game" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="nameOfGame" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="20"/>
+                <Label Text="Are you on the run?" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Switch x:Name="onTheRunSwitch" HorizontalOptions="Center" />
+                <Button Text="Create" Clicked="Create_Clicked" Margin="20"/>
+            </StackLayout>
+            <Grid x:Name="busyView" Background="Black"  IsVisible="False">
+                <ActivityIndicator IsRunning="True" Color="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+</ContentPage>

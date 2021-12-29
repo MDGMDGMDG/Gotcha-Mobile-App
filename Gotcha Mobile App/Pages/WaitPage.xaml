@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gotcha_Mobile_App.Pages.WaitPage"
+             Title="Waiting for Players">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Waiting for Players." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White"/>
+                <ActivityIndicator IsRunning="True" Color="White"/>
+                <Label x:Name="numberOfPlayersLabel" Text="1 player connected..." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White"/>
+                <Button Text="READY" Clicked="Ready_Clicked" x:Name="readyButton" IsEnabled="False"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

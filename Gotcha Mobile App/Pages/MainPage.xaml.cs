@@ -17,12 +17,12 @@ namespace Gotcha_Mobile_App
 
         private async void Create_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new CreatePage());
+            await Navigation.PushAsync(new CreatePage());
         }
 
         private async void Join_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new JoinPage());
+            await Navigation.PushAsync(new JoinPage());
         }
     }
 }

@@ -10,7 +10,7 @@
         <Label Text="Welcome!" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="Create or Join a game of tag." FontSize="16" Padding="30,0,30,0"/>
         <Button Text="CREATE" Clicked="Create_Clicked"/>
-        <Button Text="Join" Clicked="Join_Clicked"/>
+        <Button Text="JOIN" Clicked="Join_Clicked"/>
     </StackLayout>
 
 </ContentPage>
