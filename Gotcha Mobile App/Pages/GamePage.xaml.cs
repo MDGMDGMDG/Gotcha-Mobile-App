@@ -14,7 +14,9 @@ namespace Gotcha_Mobile_App.Pages
     public partial class GamePage : ContentPage
     {
         private bool _isInitiated;
+        private bool _shutDown;
         private CancellationTokenSource cts;
+        private Task _task;
         private Location _oldLocation { get; set; }
         private Location _newLocation { get; set; }
 
@@ -38,7 +40,7 @@ namespace Gotcha_Mobile_App.Pages
             if (!_isInitiated)
             {
                 _isInitiated = true;
-                await Task.Factory.StartNew(async () =>
+                _task = await Task.Factory.StartNew(async () =>
                 {
                     do
                     {
@@ -46,7 +48,7 @@ namespace Gotcha_Mobile_App.Pages
                         GetCurrentLocation();
                         await Task.Delay(5000);
                         System.Diagnostics.Debug.WriteLine($"task END after 5 sec");
-                    } while (_isInitiated);
+                    } while (!_shutDown);
                 });
             }
         }
@@ -119,6 +121,8 @@ namespace Gotcha_Mobile_App.Pages
 
         protected override async void OnDisappearing()
         {
+            _task = null;
+            _shutDown = true;
             if (cts != null && !cts.IsCancellationRequested)
                 cts.Cancel();
 

@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="Gotcha_Mobile_App.Pages.GamePage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             ios:Page.UseSafeArea="True">
     
         <Grid BackgroundColor="Black">
         <Button BackgroundColor="Red" WidthRequest="100" VerticalOptions="Start" HorizontalOptions="End" Margin="10"
                     TextColor="White" Text="QUIT" Clicked="QuitButton_Clicked"/>
-        <Label x:Name="distanceLabel" Text="DISTANCE" TextColor="White" FontSize="Large" FontAttributes="Bold"
+        <Label x:Name="distanceLabel" Text="DISTANCE" TextColor="White" FontSize="75" FontAttributes="Bold"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"/>
         </Grid>
